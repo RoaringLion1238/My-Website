@@ -69,28 +69,17 @@
         <script src="https://apis.google.com/js/platform.js"></script>
 
         <div class="g-ytsubscribe" data-channelid="UCPjCFt5lKA9vjEW3VPyf2PA" data-layout="full" data-count="default"></div>
-        <script>// Function to fetch a random fact from the API
-function fetchRandomFact() {
-    const apiURL = 'https://api.fungenerators.com/fact/random';
-    
-    fetch(apiURL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json(); // Convert the response to JSON
-        })
-        .then(data => {
-            console.log(data); // Log the data to the console
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-}
+        <script>
+            fetch('https://uselessfacts.jsph.pl/api/v2/facts/random')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 
-// Call the function to fetch and log the random fact
-fetchRandomFact();
-</script>
+        </script>
     </main>
 
     <footer>
