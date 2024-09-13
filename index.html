@@ -69,6 +69,7 @@
         <script src="https://apis.google.com/js/platform.js"></script>
 
         <div class="g-ytsubscribe" data-channelid="UCPjCFt5lKA9vjEW3VPyf2PA" data-layout="full" data-count="default"></div>
+        <button id="factButton">Get a Random Fact</button>
         <script>
             function Fact() {
   fetch('https://uselessfacts.jsph.pl/api/v2/facts/random')
@@ -82,7 +83,6 @@
 }
             document.getElementById('factButton').addEventListener('click', Fact);
         </script>
-        <button id="factButton">Get a Random Fact</button>
     </main>
 
     <footer>
