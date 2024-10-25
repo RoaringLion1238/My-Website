@@ -98,7 +98,8 @@
     <script>var board = Chessboard('myBoard', {
   draggable: true,
   dropOffBoard: 'trash',
-  sparePieces: true
+  sparePieces: true,
+  pieceTheme: 'img/chesspieces/alpha/{piece}.png'
 })
 
 $('#startBtn').on('click', board.start)
