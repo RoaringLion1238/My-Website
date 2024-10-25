@@ -78,8 +78,13 @@
 
         <div class="g-ytsubscribe" data-channelid="UCPjCFt5lKA9vjEW3VPyf2PA" data-layout="full" data-count="default"></div>
     </main>
-    <script>var board = Chessboard('myBoard')</script>
+    
     <div id="myBoard" style="width: 400px"></div>
+    <script>var board = Chessboard('myBoard', {
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true
+}))</script>
     <footer>
         <p>Do you want to learn to make a website?<br> Reach out to me so I could teach you how to make a website!</p>
     </footer>
