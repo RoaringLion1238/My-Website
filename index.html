@@ -84,7 +84,19 @@
     </main>
     
     <div id="myBoard" style="width: 400px"></div>
-    <script>var board = Chessboard('myBoard')</script>
+<button id="startBtn">Start Position</button>
+<button id="clearBtn">Clear Board</button>
+    <br>
+    <br>
+    <br>
+    <script>var board = Chessboard('myBoard', {
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true
+})
+
+$('#startBtn').on('click', board.start)
+$('#clearBtn').on('click', board.clear)</script>
     <footer>
         <p>Do you want to learn to make a website?<br> Reach out to me so I could teach you how to make a website!</p>
     </footer>
