@@ -103,15 +103,18 @@
   }
 
   // alpha theme for black pieces
-  return 'img/chesspieces/wikipedia/' + piece + '.png'
+  return 'img/chesspieces/alpha/' + piece + '.png'
 }
-        var board = Chessboard('myBoard', {
+
+var config = {
+  pieceTheme: pieceTheme,
+  position: 'start',
   draggable: true,
   dropOffBoard: 'trash',
   sparePieces: true,
-  pieceTheme: pieceTheme,
-})
-
+}
+var board = Chessboard('myBoard', config)
+        
 $('#startBtn').on('click', board.start)
 $('#clearBtn').on('click', board.clear)</script>
     <footer>
