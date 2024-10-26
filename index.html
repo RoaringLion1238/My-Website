@@ -95,11 +95,21 @@
     <br>
     <br>
     <br>
-    <script>var board = Chessboard('myBoard', {
+    <script>
+        function pieceTheme (piece) {
+  // wikipedia theme for white pieces
+  if (piece.search(/w/) !== -1) {
+    return 'img/chesspieces/wikipedia/' + piece + '.png'
+  }
+
+  // alpha theme for black pieces
+  return 'img/chesspieces/wikipedia/' + piece + '.png'
+}
+        var board = Chessboard('myBoard', {
   draggable: true,
   dropOffBoard: 'trash',
   sparePieces: true,
-  pieceTheme: 'https://github.com/oakmac/chessboardjs/tree/master/website/img/chesspieces/wikipedia/{piece}.png',
+  pieceTheme: pieceTheme,
 })
 
 $('#startBtn').on('click', board.start)
