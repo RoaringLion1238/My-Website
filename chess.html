@@ -105,9 +105,9 @@
 
       function pieceTheme(piece) {
         if (piece.search(/w/) !== -1) {
-          return "" + piece + '.png';
+          return piece + '.png';
         }
-        return '' + piece + '.png';
+        return piece + '.png';
       }
 
       function updateStatus() {
@@ -116,7 +116,7 @@
         if (game.turn() === 'b') {
           moveColor = 'Black';
         }
-        if (game.in_checkmate() && allowIllegalMoves) {
+        if (game.in_checkmate()) {
           status = 'Checkmate! ' + moveColor + ' is in checkmate, but game continues due to illegal moves.';
         } else if (game.in_draw()) {
           status = 'Game over, drawn position';
